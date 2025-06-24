@@ -18,13 +18,7 @@ app.use(cors());
 // Database connection
 db();
 
-// View engine setup
-app.set("view engine", "pug");
-app.set("views", path.join(__dirname, "views"));
-app.use(express.static(path.join(__dirname, "public")));
-
 // Routes
-
 app.use("/api/v2/user", authRouter);
 app.use("/protected", protectedRoute);
 app.use("/api/v2/questions", questionRouter);
